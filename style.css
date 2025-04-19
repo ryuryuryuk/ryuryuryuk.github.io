@@ -3,12 +3,11 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, sans-serif;
 }
-  
+
 body {
     background-color: #18181b;
     line-height: 1.6; /* 줄간격 1.6 */
 }
-  
 /* nav바 위로 올리고 배경보다 살짞 밝은 컬러로*/
 nav .navBar {
     display: flex;
@@ -18,7 +17,7 @@ nav .navBar {
     background-color: #27272a;
     top: 0;
 }
-  
+
 nav a {
     text-decoration: none;
     font-weight: 600;
