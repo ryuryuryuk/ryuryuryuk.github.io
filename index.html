@@ -1,10 +1,150 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>인터넷기초04_20230690_유가빈</title>
+        <!-- 메타데이터 -->
+        <meta name="description" content="포트폴리오 페이지">
+        <meta name="author" content="ryuryuryuk">
+        <title>portfolio of 20230690_유가빈</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <!-- 아이콘 쓰기 위해서 ! -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
 
     <body>
+
+        <!-- 페이지 목차 -->
+        <nav>
+            <div class="navBar">
+            <!-- 메인화면 -->
+            <div><a href="#name">Home</a></div>
+
+            <!-- 연락처 -->
+            <div><a href="#contact">Contact</a></div>
+            
+            <!-- 학력, 경력 -->
+            <div><a href="#history">History</a></div>
+
+            <!-- 프로젝트 -->
+            <div><a href="#projects">Projects</a></div>
+            </div>
+        </nav>
+
+        <header>
+            <div class="profile-img" alt="프로필 이미지">
+                <img src = "media/cat.png"  width="130" height="130">
+            </div>
+            <div class="name">
+            <h2>유가빈  | Kelly Ryu</h2>
+            <div>콤퓨터 사이언티스트가 되고 싶은 대학생</div>
+        </div>
+        </header>
+
+        <article>
+            <div class="intro">
+            <p>안녕하세요. 컴퓨터 공학을 전공하며 백엔드와 인공지능 분야에 관심을 갖고 공부하고 있는 
+                대학생입니다. 단순히 기술을 배우는 것을 넘어 '왜 이렇게 작동하는가'를 이해하고, 
+                이를 응용해서 더 나은 문제해결방법을 고민하는 과정에 큰 즐거움을 느끼고 있습니다. 앞으로도 공부 과정을 공유하며 함께 성장하는 개발자가 <br>되고 싶습니다!</p>
+            <p> Hello! I’m a Computer Engineering student with a strong interest in backend development and artificial intelligence.
+                I focus on understanding how technologies work, not just how to use them, and enjoy applying that knowledge to solve problems more effectively.
+                I hope to grow as a developer by continuously learning, sharing my journey, and improving with others.</p>
+            </div>
+        </article>
+
+        <article id="contact">
+            <h2>Contact</h2>
+            <div class="contact-box">
+            <div class="contact-item">
+                <i class="fab fa-github"></i>
+                GitHub :<a href="https://github.com/ryuryuryuk" target="_blank"> https://github.com/ryuryuryuk</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                Email : <a href="mailto:kellyryu04@gmail.com" target="_blank">kellyryu04@gmail.com</a>
+
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-blog"></i>
+                 Blog : <a href="https://velog.io/@ryuryuryuk/posts" target="_blank">https://velog.io/@ryuryuryuk/posts</a>
+            </div>
+        </div>
+        </article>
+
+        <article id="history">
+            <h2>History</h2>
+            <div class="history-box">
+            <details>
+            <summary>덕성여자대학교 디지털소프트웨어공학부, 정보통계학(복수전공)</summary>
+            <p>2023. 03 ~ 현재</p>
+        </details>
+        <details>
+            <summary>의왕고등학교</summary>
+            <p>2020 ~ 2022</p>
+        </details>
+        </div>
+        </article>
+
+
+
+<!-- 여기 div 많아서 css 수정할 때 주의!!!!
+        프로젝트 항목 나열! 리스트 태그 활용함. ol li -->
+        <article id="projects">
+            <h2>Projects</h2>
+            <ol class="project-list">
+            <!-- 첫 번째 프로젝트 -->
+            <li>
+                <div class="project-card">
+                    <h3>1. 맛집 소개 프로젝트</h3>
+                    <div class="project-table">
+                        <div class="table-content1">
+                      <p>덕성여대 주변의 맛집 정보를 담은 웹사이트입니다. 
+                        <br>맛집 리스트와 상세정보가 담겨있습니다.</p>
+                      <a href="https://ryuryuryuk.github.io/duksung_diner/" target="_blank">
+                        <i class="fas fa-globe"></i> Visit Website
+                      </a>
+                      <a href="https://github.com/ryuryuryuk/duksung_diner" target="_blank">
+                        <i class="fab fa-github"></i> Visit GitHub
+                      </a>
+                    </div>
+
+                    <div class="table-content2">
+                      <img src="media/project01.png" alt="프로젝트1" width="180" height="180">
+                    </div>
+
+                  </div>
+                </div>
+              </li>
+          
+              <!-- 두 번째 프로젝트 -->
+              <li>
+                <div class="project-card">
+                  <h3>2. 두 번째 프로젝트</h3>
+
+                  <div class="project-table">
+                    <div class="table-content1">
+                      <p>프로젝트 소개</p>
+                      <a href="" target="_blank">
+                        <i class="fas fa-globe"></i> Visit Website
+                      </a>
+                      <a href="" target="_blank">
+                        <i class="fab fa-github"></i> Visit GitHub
+                      </a>
+                    </div>
+
+                    <div class="table-content2">
+                      <img src="media/project01.png" alt="프로젝트2" width="180" height="180">
+                    </div>
+
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </article>
+
         
+        <!-- 내이름, 이메일, 간단한 설명 -->
+        <footer>
+            Copyright 2025 GabinRyu | 개인 포트폴리오 페이지 | kellyryu04@gmail.com
+        </footer>
+
     </body>
 </html>
