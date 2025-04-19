@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>WebForm_20230690_유가빈</title>
+
+  <!-- 스크립트 부분 하... 드디어 -->
+  <script>
+    function submitForm(event, formId) {
+      event.preventDefault();
+      const form = document.getElementById(formId);
+
+      const email = form.querySelector('[name="email"]')?.value || '';
+      const name = form.querySelector('[name="name"]')?.value || '';
+      const mbti = form.querySelector('[name="mbti"]')?.value || '';
+      const identity = form.querySelector('[name="identity"]')?.value || '';
+      const recommend = form.querySelector('[name="recommend"]')?.value || '';
+
+      const drinks = form.querySelectorAll('[name="drink"]:checked');
+      const drinklist = Array.from(drinks).map(el => el.value).join(',');
+
+      const score = form.querySelector('[name="score"]:checked')?.value || '';
+
+      /*여기 시트 배포용 링크넣기*/
+      fetch("https://script.google.com/macros/s/AKfycbzhdDfCKw2SlkIreRZlMkwJ4RWLTDnx-uIxYpp9zcG-YgG9kBKV_7QoHheTQ0BEEG8XSQ/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: `email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&mbti=${encodeURIComponent(mbti)}&identity=${encodeURIComponent(identity)}&drink=${encodeURIComponent(drinklist)}&recommend=${encodeURIComponent(recommend)}&score=${encodeURIComponent(score)}`
+      }).then(() => {
+        alert("제출이 완료되었습니다!");
+        form.reset();
+      }).catch(error => {
+        alert("전송 실패: " + error.message);
+      });
+    }
+  </script>
+
+
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #ffffff;
+    }
+
+    h2 {
+      font-size: 50px;
+      text-align: center;
+      color: #1e3a8a;
+    }
+
+    .form-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px; /* fieldset 들 사이의 간격*/
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    form {
+      width: 500px;
+    }
+
+    fieldset {
+      border: 3px solid #3b82f6;
+      padding: 40px;
+    }
+
+    /* 신원조사, 취향조사 폰트 부분 */
+    legend {
+      font-size: 22px;
+      color: #2563eb;
+    }
+/* 질문들 */
+    label {
+      display: block;
+      margin-top: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #b2b2b2;
+    }
+/* 음료 질문 체크박스들 */
+    .checkbox-group label {
+      margin-top: 5px;
+    }
+/*제출하기 버튼 */
+    button {
+      display: block;
+      margin: 40px auto; /*auto 해야 가운데로 와요*/
+      padding: 15px;
+      border-radius: 10px;
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      font-size: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>과제용 WebForm</h2>
+
+  <div class="form-container">
+    <form id="webform1" onsubmit="submitForm(event, 'webform1')">
+      <fieldset>
+        <legend>신원조사</legend>
+
+        <label for="name">이름:</label>
+        <input type="text" name="name" placeholder="너의이름은??" required>
+
+        <label for="email">이메일:</label>
+        <input type="email" name="email" placeholder="abc@gmail.com" required>
+
+        <label for="mbti">MBTI:</label>
+        <input type="text" name="mbti" placeholder="I로 시작할 것 같소이다" required>
+
+        <label for="identity">당신은 누구인가요?</label>
+        <input type="text" name="identity" list="identities">
+        <datalist id="identities">
+          <option value="고양이">
+          <option value="일론머스크">
+          <option value="외계인">
+          <option value="천재 해커">
+          <option value="교수님">
+        </datalist>
+
+        <button type="submit">제출하기</button>
+      </fieldset>
+    </form>
+
+    <form id="webform2" onsubmit="submitForm(event, 'webform2')">
+      <fieldset>
+        <legend>취향조사</legend>
+
+        <label>좋아하는 음료는?</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="drink" value="뜨거운 아아"> 뜨거운 아아</label>
+          <label><input type="checkbox" name="drink" value="민트초코프라페"> 민트초코프라페</label>
+          <label><input type="checkbox" name="drink" value="땅콩젤리스무디"> 땅콩젤리스무디</label>
+          <label><input type="checkbox" name="drink" value="물"> water</label>
+        </div>
+
+        <label for="recommend">현금 10억 있으면 어디에 쓰실 건가요?</label>
+        <textarea name="recommend" rows="3"></textarea>
+
+        <label>마지막 질문. 교수님 제 과제는 몇점인가요?</label>
+        <label><input type="radio" name="score" value="100"> 100점</label><br>
+        <label><input type="radio" name="score" value="1000"> 1000점</label><br>
+        <label><input type="radio" name="score" value="만점"> 만점(plz)</label><br>
+
+        <button type="submit">제출하기</button>
+      </fieldset>
+    </form>
+  </div>
+</body>
+</html>
