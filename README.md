@@ -1,4 +1,4 @@
-# ✨ Gabin Ryu's Developer Portfolio
+# ✨ Developer Portfolio
 
 이 프로젝트는 제 전공 학습과 개발자로서의 관심사를 소개하고,  
 진행한 프로젝트들을 정리한 **HTML/CSS 기반의 정적 포트폴리오 웹사이트**입니다.
